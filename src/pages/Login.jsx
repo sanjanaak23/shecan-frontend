@@ -3,14 +3,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../index.css";
+import loginImage from "../assets/login.jpg"; // ✅ Correct import
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const navigate = useNavigate(); // 🔑
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate login success
     navigate("/main");
   };
 
@@ -18,7 +18,7 @@ const Login = () => {
     <div
       className="min-h-screen bg-cover bg-center flex items-center justify-center"
       style={{
-        backgroundImage: `url('/src/assets/login.jpg')`,
+        backgroundImage: `url(${loginImage})`, // ✅ Dynamic reference
         backdropFilter: "blur(4px)",
       }}
     >
