@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../index.css";
-import loginImage from "../assets/login.jpg"; // ✅ Correct import
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -18,7 +17,7 @@ const Login = () => {
     <div
       className="min-h-screen bg-cover bg-center flex items-center justify-center"
       style={{
-        backgroundImage: `url(${loginImage})`, // ✅ Dynamic reference
+        backgroundImage: `url('/login.jpg')`, // ✅ Public image path
         backdropFilter: "blur(4px)",
       }}
     >
